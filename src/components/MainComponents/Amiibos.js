@@ -14,7 +14,7 @@ export default class Amiibos extends Component {
         const res = await axios.get(process.env.REACT_APP_HOSTNAME + "/amiibos/user/" + localStorage.getItem("user_id"));
         this.setState({ amiibosfav: res.data });
 
-        const res2 = await axios.get("https://www.amiiboapi.com/api/amiibo");
+        const res2 = await axios.get(process.env.REACT_APP_API_EXTERNA);
         let x = Object.entries(res2.data.amiibo); 
         let y = x.slice(x.length-30); 
         let z = []
